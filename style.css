@@ -1232,71 +1232,146 @@ footer p {
     }
 }
 
- /* Container for Focus and How I Think */
-.philosophy-grid {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Fixes the overlapping/squashing */
-    gap: 30px;
-    margin: 40px 0;
+/* Philosophy Section Styles */
+.about-philosophy {
+    grid-column: 1 / -1;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
 }
 
-/* Individual Cards (Focus / How I Think) */
-.phi-card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 12px;
-    border-left: 5px solid var(--accent-color);
-    flex: 1; /* Makes columns equal width */
-    min-width: 300px; /* Forces wrap on mobile */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.philosophy-section {
+    margin-bottom: 2.5rem;
 }
 
-.phi-card h3 {
-    margin-top: 0;
-    color: var(--accent-color);
+.philosophy-section h4 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
-/* Styling the Bullet Points */
-.phi-card ul {
-    list-style: none;
-    padding: 0;
+.philosophy-intro {
+    color: rgba(232, 244, 248, 0.8);
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    font-style: italic;
 }
 
-.phi-card li {
-    margin-bottom: 12px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.phi-card li::before {
-    content: "▹"; /* Professional engineering arrow */
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
-}
-
-/* Philosophy Statements (Bottom Section) */
 .philosophy-list {
-    margin-top: 50px;
-    padding: 30px;
-    background: rgba(88, 166, 255, 0.05); /* Subtle highlight */
-    border-radius: 15px;
-    text-align: center;
-}
-
-.philosophy-list ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
     list-style: none;
-    padding: 0;
+    padding-left: 0;
 }
 
 .philosophy-list li {
-    font-style: italic;
-    font-weight: 500;
-    color: var(--accent-color);
+    padding: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: rgba(232, 244, 248, 0.8);
+    font-size: 1.05rem;
 }
+
+.philosophy-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Focus Grid */
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.focus-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 212, 255, 0.05);
+    border-left: 3px solid var(--primary);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.focus-item:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.focus-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.focus-item p {
+    margin: 0;
+    color: rgba(232, 244, 248, 0.9);
+    font-size: 1rem;
+}
+
+/* Principles Grid */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.principle-card {
+    padding: 1.5rem;
+    background: rgba(20, 27, 61, 0.4);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.principle-card:hover {
+    background: rgba(20, 27, 61, 0.6);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.principle-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.principle-card p {
+    margin: 0;
+    color: rgba(232, 244, 248, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Light Mode Support */
+body.light-mode .focus-item {
+    background: rgba(0, 153, 255, 0.08);
+    border-left-color: var(--primary);
+}
+
+body.light-mode .principle-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 153, 255, 0.3);
+}
+
+body.light-mode .philosophy-section {
+    border-top-color: rgba(0, 153, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .focus-grid,
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
+} 
