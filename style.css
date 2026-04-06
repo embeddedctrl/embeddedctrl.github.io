@@ -1375,3 +1375,75 @@ body.light-mode .philosophy-section {
         grid-template-columns: 1fr;
     }
 } 
+
+/* Education Section Styles */
+.education-section {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+}
+
+.education-subtitle {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.education-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(20, 27, 61, 0.4);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    min-height: 80px;
+}
+
+.education-card:hover {
+    background: rgba(20, 27, 61, 0.6);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.education-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.education-content {
+    color: rgba(232, 244, 248, 0.9);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.education-content strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Light Mode Support */
+body.light-mode .education-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 153, 255, 0.3);
+}
+
+body.light-mode .education-card:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+}
