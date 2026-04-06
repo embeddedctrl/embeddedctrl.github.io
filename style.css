@@ -1232,7 +1232,7 @@ footer p {
     }
 }
 
-.philosophy-grid {
+/* .philosophy-grid {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -1265,4 +1265,40 @@ blockquote {
     padding: 10px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
+} */
+
+/* NEW CLEAN LAYOUT */
+.about-section {
+    display: flex;
+    flex-direction: row; /* Side-by-side on desktop */
+    align-items: flex-start;
+    gap: 40px;
+    padding: 50px 5%;
+    flex-wrap: wrap; /* Fixes the "strange" overlap on smaller screens */
+}
+
+.about-text {
+    flex: 1; /* Takes up remaining space */
+    min-width: 300px;
+}
+
+/* Fix those bullet points from your screenshot */
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 25px;
+}
+
+.about-text li::before {
+    content: "•";
+    color: #00d4ff; /* Match your blue theme */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
