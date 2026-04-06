@@ -1232,73 +1232,71 @@ footer p {
     }
 }
 
-/* .philosophy-grid {
+ /* Container for Focus and How I Think */
+.philosophy-grid {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 40px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Fixes the overlapping/squashing */
+    gap: 30px;
+    margin: 40px 0;
 }
 
+/* Individual Cards (Focus / How I Think) */
 .phi-card {
     background: var(--card-bg);
     padding: 25px;
     border-radius: 12px;
     border-left: 5px solid var(--accent-color);
-    width: 45%;
-    min-width: 300px;
+    flex: 1; /* Makes columns equal width */
+    min-width: 300px; /* Forces wrap on mobile */
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.phi-quotes {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-style: italic;
+.phi-card h3 {
+    margin-top: 0;
     color: var(--accent-color);
 }
 
-blockquote {
-    border: 1px solid var(--accent-color);
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-} */
-
-/* NEW CLEAN LAYOUT */
-.about-section {
-    display: flex;
-    flex-direction: row; /* Side-by-side on desktop */
-    align-items: flex-start;
-    gap: 40px;
-    padding: 50px 5%;
-    flex-wrap: wrap; /* Fixes the "strange" overlap on smaller screens */
-}
-
-.about-text {
-    flex: 1; /* Takes up remaining space */
-    min-width: 300px;
-}
-
-/* Fix those bullet points from your screenshot */
-.about-text ul {
+/* Styling the Bullet Points */
+.phi-card ul {
     list-style: none;
     padding: 0;
 }
 
-.about-text li {
+.phi-card li {
     margin-bottom: 12px;
-    line-height: 1.6;
+    padding-left: 20px;
     position: relative;
-    padding-left: 25px;
 }
 
-.about-text li::before {
-    content: "•";
-    color: #00d4ff; /* Match your blue theme */
+.phi-card li::before {
+    content: "▹"; /* Professional engineering arrow */
     position: absolute;
     left: 0;
+    color: var(--accent-color);
     font-weight: bold;
+}
+
+/* Philosophy Statements (Bottom Section) */
+.philosophy-list {
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(88, 166, 255, 0.05); /* Subtle highlight */
+    border-radius: 15px;
+    text-align: center;
+}
+
+.philosophy-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.philosophy-list li {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent-color);
 }
